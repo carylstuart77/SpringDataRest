@@ -3,6 +3,7 @@ package edu.cnm.deepdive.funwithspring.domain;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,7 +37,7 @@ public class Group {
   /**
    * Map one group to many memberships.
    */
-  @OneToMany(fetch = FetchType.EAGER, mappedBy = "group")
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "group", cascade = CascadeType.ALL)
   private List<Membership> memberships = new LinkedList<>();
 
   @ManyToOne(fetch = FetchType.EAGER)

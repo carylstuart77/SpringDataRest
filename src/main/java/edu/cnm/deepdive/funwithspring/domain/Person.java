@@ -41,7 +41,7 @@ public class Person {
   /**
    * Map one person to many group.
    */
-  @OneToMany(fetch = FetchType.EAGER, mappedBy = "person")
+  @OneToMany(fetch = FetchType.EAGER, mappedBy = "person", cascade = CascadeType.ALL)
   private List<Group> groups = new LinkedList<>();
 
   private String name;
